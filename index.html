@@ -6,131 +6,121 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Emir's Mini Studio</title>
 <style>
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: #0b1220;
-  color: #f4f7fb;
-  font-family: Arial, sans-serif;
-}
-header {
-  padding: 22px 8%;
-  border-bottom: 1px solid #26364d;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo { font-size: 21px; font-weight: bold; }
-nav a {
-  color: #c2cede;
-  margin-left: 20px;
-  text-decoration: none;
-}
-.hero {
-  padding: 110px 10%;
-  background: radial-gradient(circle at 80%, #17475c, #0b1220 65%);
-}
-.hero small { color: #55d6e8; letter-spacing: 3px; }
-h1 { font-size: clamp(38px, 6vw, 65px); margin: 20px 0; }
-p { color: #aab8ca; line-height: 1.7; }
-.btn {
-  display: inline-block;
-  background: #55d6e8;
-  color: #08131e;
-  padding: 14px 22px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 15px;
-}
-section { padding: 65px 10%; }
-h2 { font-size: 30px; }
-.games {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
-  gap: 22px;
-}
-.card {
-  background: #142238;
-  border: 1px solid #26364d;
-  border-radius: 14px;
-  overflow: hidden;
-}
-.art {
-  height: 170px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg,#17475c,#26364d);
-  font-size: 45px;
-}
-.card-content { padding: 20px; }
-.tag { color: #55d6e8; font-size: 12px; }
-footer {
-  text-align: center;
-  padding: 30px;
-  border-top: 1px solid #26364d;
-  color: #8999ad;
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#080e19;color:#f4f7ff;font-family:Arial,sans-serif}
+header{height:82px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;background:#091321;border-bottom:1px solid #20334b;position:sticky;top:0;z-index:10}
+.logo{font-size:23px;font-weight:900;line-height:1.05;color:#168cff}
+.logo span{color:white}
+nav{display:flex;gap:28px;align-items:center}
+nav a{color:#e4eaf5;text-decoration:none;font-weight:bold}
+nav a:hover{color:#168cff}
+button{cursor:pointer}
+.lang{background:#13243a;color:white;border:1px solid #168cff;padding:9px 13px;border-radius:8px}
+.hero{min-height:420px;padding:85px 7%;display:flex;align-items:center;background:radial-gradient(ellipse at 80% 40%,#123d69 0%,transparent 42%),linear-gradient(110deg,#080e19,#101e32 65%,#091321)}
+.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.03;font-weight:900}
+.blue{color:#168cff}
+.hero p{font-size:19px;color:#b9c7d9;margin:20px 0 28px}
+.btn{display:inline-block;background:#168cff;color:#06111e;padding:15px 24px;border-radius:10px;text-decoration:none;font-weight:900}
+.btn:hover{background:#65b7ff}
+section{padding:65px 5%}
+.section-title{font-size:30px;margin-bottom:28px}
+.games{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.game{border:1px solid #263b55;border-radius:15px;overflow:hidden;background:#101c2d;transition:.2s}
+.game:hover{transform:translateY(-5px);border-color:#168cff}
+.cover{height:190px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:27px;font-weight:900;letter-spacing:1px;padding:20px}
+.military{background:linear-gradient(135deg,#111b25,#354354,#10151d)}
+.adventure{background:linear-gradient(135deg,#174b36,#267b56,#102d32)}
+.racing{background:linear-gradient(135deg,#552a30,#a34b38,#171d32)}
+.game-info{padding:20px}
+.game-info h3{margin-bottom:9px}
+.game-info p{color:#aab8ca;font-size:14px;line-height:1.5}
+.status{display:inline-block;margin-top:15px;color:#64b8ff;font-size:13px;font-weight:bold}
+.about{background:#0d1726;border-top:1px solid #1e3046;border-bottom:1px solid #1e3046}
+.about p{max-width:750px;color:#b9c7d9;line-height:1.8;font-size:17px}
+footer{padding:30px 5%;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#8192a8;font-size:14px}
+@media(max-width:750px){
+header{height:auto;padding:18px 5%;gap:15px;flex-wrap:wrap}
+nav{gap:14px;flex-wrap:wrap;font-size:13px}
+.games{grid-template-columns:1fr}
+.hero{padding:65px 7%;min-height:360px}
 }
 </style>
 </head>
 <body>
-
 <header>
-  <div class="logo">◈ EMIR'S MINI STUDIO</div>
-  <nav>
-    <a href="#games">Games</a>
-    <a href="#about">About</a>
-  </nav>
+<div class="logo"><span>EMIR'S</span><br>MINI STUDIO</div>
+<nav>
+<a href="#home" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+<a href="#games" data-tr="Oyunlar" data-en="Games">Oyunlar</a>
+<a href="#about" data-tr="Hakkımızda" data-en="About">Hakkımızda</a>
+<a href="#contact" data-tr="Destek" data-en="Support">Destek</a>
+<button class="lang" onclick="toggleLanguage()">TR / EN</button>
+</nav>
 </header>
 
-<div class="hero">
-  <small>INDEPENDENT GAME STUDIO</small>
-  <h1>Small Studio.<br>Big Ideas.</h1>
-  <p>
-    Welcome to Emir's Mini Studio.
-    We create original games and unique experiences
-    for players around the world.
-  </p>
-  <a href="#games" class="btn">Explore Our Games</a>
+<main>
+<div class="hero" id="home">
+<div>
+<h1>EMIR'S<br><span class="blue">MINI STUDIO</span></h1>
+<p data-tr="Küçük bir stüdyo, büyük hayaller..." data-en="A small studio, big dreams...">Küçük bir stüdyo, büyük hayaller...</p>
+<a class="btn" href="#games" data-tr="🎮 Oyunları Keşfet →" data-en="🎮 Explore Games →">🎮 Oyunları Keşfet →</a>
+</div>
 </div>
 
 <section id="games">
-  <h2>Our Games / Oyunlarımız</h2>
-  <p>Discover our projects and upcoming games.</p>
+<h2 class="section-title" data-tr="🎮 Oyunlarımız" data-en="🎮 Our Games">🎮 Oyunlarımız</h2>
+<div class="games">
+<article class="game">
+<div class="cover military">⚔️<br>OPERATION ZERO</div>
+<div class="game-info">
+<h3>Operation Zero</h3>
+<p data-tr="Modern askeri atmosferde geçen aksiyon oyunu. Geliştirme aşamasında." data-en="An action game set in a modern military world. In development.">Modern askeri atmosferde geçen aksiyon oyunu. Geliştirme aşamasında.</p>
+<span class="status" data-tr="● Geliştirme aşamasında" data-en="● In development">● Geliştirme aşamasında</span>
+</div>
+</article>
 
-  <div class="games">
-    <div class="card">
-      <div class="art">◈</div>
-      <div class="card-content">
-        <span class="tag">COMING SOON</span>
-        <h3>Project 01</h3>
-        <p>Our first game is currently in development.</p>
-      </div>
-    </div>
+<article class="game">
+<div class="cover adventure">🌲<br>BLOCK ADVENTURE</div>
+<div class="game-info">
+<h3>Block Adventure</h3>
+<p data-tr="Keşif, inşa ve macera dolu bir oyun dünyası." data-en="A game world full of exploration, building and adventure.">Keşif, inşa ve macera dolu bir oyun dünyası.</p>
+<span class="status" data-tr="● Yakında" data-en="● Coming soon">● Yakında</span>
+</div>
+</article>
 
-    <div class="card">
-      <div class="art">✦</div>
-      <div class="card-content">
-        <span class="tag">IN DEVELOPMENT</span>
-        <h3>Project 02</h3>
-        <p>New adventures are on the way.</p>
-      </div>
-    </div>
-  </div>
+<article class="game">
+<div class="cover racing">🏎️<br>RACING LEGENDS</div>
+<div class="game-info">
+<h3>Racing Legends</h3>
+<p data-tr="Hızın ve rekabetin ön planda olduğu yarış oyunu." data-en="A racing game focused on speed and competition.">Hızın ve rekabetin ön planda olduğu yarış oyunu.</p>
+<span class="status" data-tr="● Planlama aşamasında" data-en="● Planned">● Planlama aşamasında</span>
+</div>
+</article>
+</div>
 </section>
 
-<section id="about">
-  <h2>About Us / Hakkımızda</h2>
-  <p>
-    Emir's Mini Studio is an independent game studio
-    focused on creativity, quality and memorable
-    gaming experiences.
-  </p>
+<section class="about" id="about">
+<h2 class="section-title" data-tr="Stüdyomuz Hakkında" data-en="About Our Studio">Stüdyomuz Hakkında</h2>
+<p data-tr="Emir's Mini Studio, oyun geliştirme hayaliyle kurulmuş bağımsız bir oyun stüdyosudur. Amacımız özgün fikirleri eğlenceli oyunlara dönüştürmek ve oyunculara güzel deneyimler sunmak." data-en="Emir's Mini Studio is an independent game studio founded around a passion for game development. Our goal is to turn original ideas into fun games and create great experiences for players.">Emir's Mini Studio, oyun geliştirme hayaliyle kurulmuş bağımsız bir oyun stüdyosudur. Amacımız özgün fikirleri eğlenceli oyunlara dönüştürmek ve oyunculara güzel deneyimler sunmak.</p>
 </section>
+</main>
 
-<footer>
-  © 2026 Emir's Mini Studio. All rights reserved.
+<footer id="contact">
+<strong>EMIR'S MINI STUDIO</strong>
+<span>© 2026 Emir's Mini Studio. <span data-tr="Tüm hakları saklıdır." data-en="All rights reserved.">Tüm hakları saklıdır.</span></span>
+<span>Independent Game Studio</span>
 </footer>
 
+<script>
+let language="tr";
+function toggleLanguage(){
+ language=language==="tr"?"en":"tr";
+ document.documentElement.lang=language;
+ document.querySelectorAll("[data-tr]").forEach(el=>{
+  el.textContent=el.getAttribute("data-"+language);
+ });
+}
+</script>
 </body>
 </html>

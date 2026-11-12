@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Games | Emir's Mini Studio</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23080b12'/%3E%3Ctext x='50' y='65' font-size='43' font-weight='bold' text-anchor='middle' fill='%23168cff'%3EEMS%3C/text%3E%3C/svg%3E">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080b12;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    height: 80px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0b101a;
+    border-bottom: 1px solid #1c293b;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #168cff;
+}
+
+.back {
+    color: #b9c5d5;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .2s;
+}
+
+.back:hover {
+    color: #168cff;
+}
+
+.language {
+    background: #111c2b;
+    color: white;
+    border: 1px solid #263b56;
+    padding: 9px 13px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+main {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 20px;
+    background:
+        radial-gradient(ellipse at 50% 35%, #102b4c 0%, transparent 55%),
+        #080b12;
+}
+
+.content {
+    text-align: center;
+    max-width: 750px;
+}
+
+.tag {
+    color: #168cff;
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-bottom: 28px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: clamp(42px, 8vw, 76px);
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #168cff;
+}
+
+.description {
+    color: #aab8ca;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 570px;
+    margin: 0 auto 35px;
+}
+
+.status {
+    display: inline-block;
+    border: 1px solid #24466d;
+    background: rgba(22, 140, 255, .08);
+    color: #58adff;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.line {
+    width: 65px;
+    height: 3px;
+    background: #168cff;
+    margin: 35px auto;
+    border-radius: 5px;
+}
+
+.note {
+    color: #718096;
+    font-size: 13px;
+}
+
+footer {
+    height: 60px;
+    background: #0b101a;
+    border-top: 1px solid #1c293b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #718096;
+    font-size: 12px;
+}
+
+@media(max-width: 600px) {
+    header {
+        padding: 0 5%;
+    }
+
+    .back {
+        font-size: 12px;
+    }
+
+    .tag {
+        letter-spacing: 3px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo">EMS<span>.</span></a>
+
+    <div style="display:flex;align-items:center;gap:20px;">
+        <a href="index.html" class="back"
+           data-tr="← Ana Sayfa"
+           data-en="← Home">← Ana Sayfa</a>
+
+        <button class="language" onclick="toggleLanguage()">EN</button>
+    </div>
+</header>
+
+<main>
+    <div class="content">
+
+        <div class="tag">EMIR'S MINI STUDIO</div>
+
+        <h1>
+            OUR <span>GAMES</span>
+        </h1>
+
+        <p class="description"
+           data-tr="Yeni dünyalar, farklı deneyimler ve özgün oyun fikirleri üzerinde çalışıyoruz. İlk oyunlarımızı burada keşfedebileceksiniz."
+           data-en="We are working on new worlds, different experiences and original game ideas. You will be able to discover our first games here.">
+            Yeni dünyalar, farklı deneyimler ve özgün oyun fikirleri üzerinde çalışıyoruz. İlk oyunlarımızı burada keşfedebileceksiniz.
+        </p>
+
+        <div class="status"
+             data-tr="● YAKINDA"
+             data-en="● COMING SOON">
+            ● YAKINDA
+        </div>
+
+        <div class="line"></div>
+
+        <p class="note"
+           data-tr="İlk projelerimiz üzerinde çalışıyoruz."
+           data-en="We are working on our first projects.">
+            İlk projelerimiz üzerinde çalışıyoruz.
+        </p>
+
+    </div>
+</main>
+
+<footer>
+    © 2026 Emir's Mini Studio. All rights reserved.
+</footer>
+
+<script>
+let english = false;
+
+function toggleLanguage() {
+    english = !english;
+
+    document.querySelectorAll("[data-tr]").forEach(element => {
+        element.textContent = english
+            ? element.getAttribute("data-en")
+            : element.getAttribute("data-tr");
+    });
+
+    document.querySelector(".language").textContent =
+        english ? "TR" : "EN";
+
+    document.documentElement.lang = english ? "en" : "tr";
+
+    document.querySelector("h1").innerHTML =
+        english ? 'OUR <span>GAMES</span>' : '<span>OYUN</span>LARIMIZ';
+}
+</script>
+
+</body>
+</html>

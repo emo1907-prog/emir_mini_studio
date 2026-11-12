@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Emir's Mini Studio bağımsız oyun stüdyosu.">
 <title>Emir's Mini Studio</title>
 
 <style>
@@ -18,46 +19,63 @@ html {
 }
 
 body {
-  background: #080e19;
-  color: #f4f7ff;
-  font-family: Arial, sans-serif;
+  background: #080b12;
+  color: #f5f7fa;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+/* HEADER */
+
 header {
-  min-height: 82px;
-  padding: 15px 5%;
+  min-height: 85px;
+  padding: 15px 7%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background: #091321;
-  border-bottom: 1px solid #20334b;
+  align-items: center;
+  background: #090e18;
+  border-bottom: 1px solid #202b3b;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
 }
 
 .logo {
-  font-size: 23px;
-  font-weight: 900;
-  color: #168cff;
-  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
 }
 
-.logo span {
+.logo-mark {
+  color: #168cff;
+  font-size: 35px;
+  font-weight: 900;
+  letter-spacing: -3px;
+}
+
+.logo-name {
   color: white;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.4px;
+}
+
+.logo-name b {
+  color: #168cff;
 }
 
 nav {
   display: flex;
-  gap: 25px;
   align-items: center;
-  flex-wrap: wrap;
+  gap: 28px;
 }
 
 nav a {
-  color: #e4eaf5;
+  color: #dce4ef;
   text-decoration: none;
+  font-size: 14px;
   font-weight: bold;
+  transition: .2s;
 }
 
 nav a:hover {
@@ -65,28 +83,35 @@ nav a:hover {
 }
 
 .lang {
-  background: #13243a;
-  color: white;
+  background: transparent;
   border: 1px solid #168cff;
+  color: white;
   padding: 9px 13px;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
+/* HERO */
+
 .hero {
-  min-height: 440px;
-  padding: 85px 7%;
+  min-height: 470px;
+  padding: 90px 9%;
   display: flex;
   align-items: center;
   background:
-    radial-gradient(ellipse at 80% 40%, #123d69 0%, transparent 42%),
-    linear-gradient(110deg, #080e19, #101e32 65%, #091321);
+    radial-gradient(circle at 80% 45%, #12345a 0%, transparent 38%),
+    linear-gradient(120deg, #080b12, #101c2d);
+}
+
+.hero-content {
+  max-width: 750px;
 }
 
 .hero h1 {
-  font-size: clamp(42px, 7vw, 76px);
-  line-height: 1.05;
+  font-size: clamp(43px, 7vw, 76px);
+  line-height: 1.08;
   font-weight: 900;
+  letter-spacing: -2px;
 }
 
 .blue {
@@ -94,75 +119,123 @@ nav a:hover {
 }
 
 .hero p {
+  margin-top: 22px;
+  margin-bottom: 30px;
+  color: #aab8ca;
   font-size: 19px;
-  color: #b9c7d9;
-  margin: 20px 0 28px;
+  line-height: 1.6;
 }
 
-.btn {
+.main-button {
   display: inline-block;
+  padding: 15px 25px;
   background: #168cff;
-  color: #06111e;
-  padding: 15px 24px;
-  border-radius: 10px;
+  color: #07111d;
   text-decoration: none;
-  font-weight: 900;
+  border-radius: 7px;
+  font-weight: bold;
+  transition: .2s;
 }
 
-.btn:hover {
-  background: #65b7ff;
+.main-button:hover {
+  background: #62b5ff;
+  transform: translateY(-2px);
 }
+
+/* GAMES */
 
 section {
-  padding: 65px 5%;
+  padding: 70px 8%;
+}
+
+.games {
+  min-height: 210px;
+  background: #0a101b;
+  border-top: 1px solid #1b2a3d;
+  border-bottom: 1px solid #1b2a3d;
 }
 
 .section-title {
-  font-size: 30px;
+  font-size: 29px;
+  font-weight: 800;
 }
 
-.games-section {
-  min-height: 220px;
+.section-title::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 29px;
+  background: #168cff;
+  margin-right: 15px;
+  vertical-align: -5px;
+  border-radius: 5px;
 }
+
+/* ABOUT */
 
 .about {
-  background: #0d1726;
-  border-top: 1px solid #1e3046;
-  border-bottom: 1px solid #1e3046;
+  background: #0d1522;
 }
 
 .about p {
-  max-width: 750px;
-  color: #b9c7d9;
-  line-height: 1.8;
-  font-size: 17px;
+  max-width: 760px;
   margin-top: 25px;
+  color: #aab8ca;
+  font-size: 16px;
+  line-height: 1.9;
 }
 
+/* FOOTER */
+
 footer {
-  padding: 30px 5%;
+  padding: 30px 7%;
   display: flex;
   justify-content: space-between;
-  gap: 15px;
+  align-items: center;
   flex-wrap: wrap;
-  color: #8192a8;
-  font-size: 14px;
+  gap: 18px;
+  background: #080b12;
+  color: #8290a3;
+  font-size: 13px;
+  border-top: 1px solid #202b3b;
 }
+
+.footer-logo {
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.footer-logo span {
+  color: #168cff;
+}
+
+/* MOBILE */
 
 @media(max-width: 750px) {
   header {
-    gap: 15px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 18px;
   }
 
   nav {
-    gap: 14px;
-    font-size: 13px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 17px;
   }
 
   .hero {
+    min-height: 390px;
     padding: 65px 7%;
-    min-height: 360px;
+  }
+
+  section {
+    padding: 55px 7%;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
   }
 }
 </style>
@@ -171,75 +244,85 @@ footer {
 <body>
 
 <header>
-  <div class="logo">
-    <span>EMIR'S</span><br>
-    MINI STUDIO
-  </div>
 
-  <nav>
-    <a href="#home" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
-    <a href="#games" data-tr="Oyunlar" data-en="Games">Oyunlar</a>
-    <a href="#about" data-tr="Hakkımızda" data-en="About">Hakkımızda</a>
-    <a href="#contact" data-tr="Destek" data-en="Support">Destek</a>
-    <button class="lang" onclick="toggleLanguage()">TR / EN</button>
-  </nav>
+<a href="#home" class="logo">
+  <span class="logo-mark">EMS</span>
+  <span class="logo-name">
+    EMIR'S <b>MINI</b> STUDIO
+  </span>
+</a>
+
+<nav>
+  <a href="#home" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+  <a href="#games" data-tr="Oyunlar" data-en="Games">Oyunlar</a>
+  <a href="#about" data-tr="Hakkımızda" data-en="About">Hakkımızda</a>
+  <a href="#contact" data-tr="Destek" data-en="Support">Destek</a>
+  <button class="lang" onclick="toggleLanguage()">TR / EN</button>
+</nav>
+
 </header>
 
 <main>
 
 <div class="hero" id="home">
-  <div>
+  <div class="hero-content">
+
     <h1>
       EMIR'S<br>
       <span class="blue">MINI STUDIO</span>
     </h1>
 
-    <p data-tr="Küçük bir stüdyo, büyük hayaller..."
-       data-en="A small studio, big dreams...">
-       Küçük bir stüdyo, büyük hayaller...
+    <p
+      data-tr="Küçük bir stüdyo, büyük hayaller. Bağımsız oyun dünyamıza hoş geldin."
+      data-en="A small studio, big dreams. Welcome to our independent gaming world.">
+      Küçük bir stüdyo, büyük hayaller. Bağımsız oyun dünyamıza hoş geldin.
     </p>
 
-    <a class="btn" href="#games"
-       data-tr="🎮 Oyunları Keşfet →"
-       data-en="🎮 Explore Games →">
-       🎮 Oyunları Keşfet →
+    <a href="#games" class="main-button"
+       data-tr="Oyunları Keşfet →"
+       data-en="Explore Games →">
+       Oyunları Keşfet →
     </a>
+
   </div>
 </div>
 
-<section id="games" class="games-section">
+<section class="games" id="games">
   <h2 class="section-title"
-      data-tr="🎮 Oyunlarımız"
-      data-en="🎮 Our Games">
-      🎮 Oyunlarımız
+      data-tr="Oyunlarımız"
+      data-en="Our Games">
+      Oyunlarımız
   </h2>
 </section>
 
 <section class="about" id="about">
+
   <h2 class="section-title"
-      data-tr="Stüdyomuz Hakkında"
-      data-en="About Our Studio">
-      Stüdyomuz Hakkında
+      data-tr="Hakkımızda"
+      data-en="About Us">
+      Hakkımızda
   </h2>
 
   <p
-    data-tr="Emir's Mini Studio, oyun geliştirme hayaliyle kurulmuş bağımsız bir oyun stüdyosudur. Amacımız özgün fikirleri eğlenceli oyunlara dönüştürmek ve oyunculara güzel deneyimler sunmak."
-    data-en="Emir's Mini Studio is an independent game studio founded around a passion for game development. Our goal is to turn original ideas into fun games and create great experiences for players.">
-    Emir's Mini Studio, oyun geliştirme hayaliyle kurulmuş bağımsız bir oyun stüdyosudur. Amacımız özgün fikirleri eğlenceli oyunlara dönüştürmek ve oyunculara güzel deneyimler sunmak.
+    data-tr="Emir's Mini Studio, özgün fikirleri oyunlara dönüştürmek amacıyla kurulmuş bağımsız bir oyun stüdyosudur. Hedefimiz oyunculara kaliteli, eğlenceli ve unutulmaz deneyimler sunmaktır."
+    data-en="Emir's Mini Studio is an independent game studio created to turn original ideas into games. Our goal is to provide players with quality, fun and unforgettable experiences.">
+    Emir's Mini Studio, özgün fikirleri oyunlara dönüştürmek amacıyla kurulmuş bağımsız bir oyun stüdyosudur. Hedefimiz oyunculara kaliteli, eğlenceli ve unutulmaz deneyimler sunmaktır.
   </p>
+
 </section>
 
 </main>
 
 <footer id="contact">
-  <strong>EMIR'S MINI STUDIO</strong>
-  <span>© 2026 Emir's Mini Studio. 
-    <span data-tr="Tüm hakları saklıdır."
-          data-en="All rights reserved.">
-      Tüm hakları saklıdır.
-    </span>
-  </span>
+
+  <div class="footer-logo">
+    EMIR'S <span>MINI</span> STUDIO
+  </div>
+
+  <span>© 2026 Emir's Mini Studio. All rights reserved.</span>
+
   <span>Independent Game Studio</span>
+
 </footer>
 
 <script>
@@ -258,3 +341,6 @@ function toggleLanguage() {
 
 </body>
 </html>
+
+
+
